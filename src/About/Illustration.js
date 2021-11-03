@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from "styled-components";
 import {theme} from "../Utilities/theme";
-import Building from "./media/Building.svg";
+import Building from "./media/illustration.jpg";
 
 
 const Container = styled.div`
   
       img{
         position: relative;
-        width: 40rem;
-        height: 30rem;
-        top: -2rem;
+        width: 35rem;
+        height: 34rem;
+
+        left: 6rem;
       }
       
 `

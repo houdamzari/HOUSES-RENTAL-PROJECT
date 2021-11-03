@@ -6,17 +6,18 @@ import HeadingSecondary from "./HeadingSecondary";
 
 const Container = styled.div`
     
-    height: 80vh;
+    height: ${props => props.height};
     width: 5vw;
     position: absolute;
     left: 0;
     top: 0;
   background-color: ${theme.yellow};
+  overflow: hidden;
 
 `
-function Sidebar(props) {
+function Sidebar({height}) {
     return (
-        <Container>
+        <Container height={height}>
             <HeadingSecondary />
         </Container>
     );

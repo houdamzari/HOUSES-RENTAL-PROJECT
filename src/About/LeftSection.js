@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
 import {theme} from "../Utilities/theme";
-import Sidebar from "./Sidebar";
 import HeadingPrimary from "./HeadingPrimary";
-import SearchFilter from "./SearchFilter";
+import Button from "./Button";
+import Sidebar from "../Home/Sidebar";
 
 
 
@@ -16,9 +16,9 @@ const Container = styled.div`
 function LeftSection(props) {
     return (
         <Container>
-            <Sidebar height='85vh' />
+            <Sidebar height='90vh' />
             <HeadingPrimary />
-            <SearchFilter />
+            <Button />
         </Container>
     );
 }

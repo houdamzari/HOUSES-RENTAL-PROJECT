@@ -1,18 +1,23 @@
 import React from 'react';
 import styled from "styled-components";
 import {theme} from "../Utilities/theme";
-import BigContainer from "./BigContainer";
+import Illustration from "./Illustration";
 
 
 
 const Container = styled.div`
+  height: fit-content;
+
+
 `
-function Home(props) {
+function RightSection(props) {
     return (
         <Container>
-            <BigContainer  />
+
+             <Illustration />
+
         </Container>
     );
 }
 
-export default Home;
+export default RightSection;
