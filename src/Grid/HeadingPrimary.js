@@ -5,24 +5,24 @@ import {theme} from "../Utilities/theme";
 
 
 const Container = styled.div`
-      width: 65%;
   position: relative;
-  top: 3rem;
+  width: 100%;
+  text-align: center;
 
   h3{
       position: relative;
-      left: 10rem;
 
       font-weight: 400;
       font-size: 3rem;
       letter-spacing: .7rem;
+    text-transform:uppercase ;
     }
 
 `
-function HeadingPrimary(props) {
+function HeadingPrimary() {
     return (
         <Container>
-            <h3>Find the flatmate that suits you.</h3>
+            <h3>  Recently added </h3>
 
         </Container>
     );

@@ -6,11 +6,11 @@ import HeadingSecondary from "./HeadingSecondary";
 
 const Container = styled.div`
     
-    height: 85vh;
+    height: 80vh;
     width: 5vw;
-    position: relative;
+    position: absolute;
     left: 0;
-    top: -6.3rem;
+    top: 0;
   background-color: ${theme.yellow};
 
 `
