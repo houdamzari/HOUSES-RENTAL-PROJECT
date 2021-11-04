@@ -13,6 +13,7 @@ import About from "./About/About";
 import Navbar from "./Navbar/Navbar";
 import NearbySection from "./NearbySection/NearbySection";
 import GridSection from "./Grid/GridSection";
+import Footer from "./Footer/Footer";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -45,6 +46,7 @@ export default function App() {
               <Home />
               <NearbySection />
               <GridSection />
+              <Footer />
             </Route>
             <Route exact path="/About">
               <Navbar />
