@@ -11,3 +11,9 @@ body {
 code {
   font-family: 'Poppins', sans-serif;
 }
+
+.daterangepicker {
+  position: fixed!important;
+  top: 250px!important;
+
+}

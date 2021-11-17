@@ -11,7 +11,7 @@ import profile from "./media/profile.svg";
 
 const Container = styled.div`
   position: relative;
-  border-bottom: 2px solid ${theme.turquois};
+  border-bottom: 2px solid rgba(2, 102, 112, 0.2);
   top: -2rem;
 
   ul {
@@ -25,6 +25,7 @@ const Container = styled.div`
     margin-left: 6rem;
 
   }
+
   li > * {
     width: 10rem;
     height: 3rem;
@@ -37,37 +38,53 @@ const Container = styled.div`
     top: 1.5rem;
 
   }
+
   .about {
     border-bottom: ${(props) =>
-    props.condition ? `4px solid ${theme.turquois}` : "none"};
+            props.condition1 ? `2px solid ${theme.turquois}` : "none"};
+    padding: ${(props) =>
+            props.condition1 ? `18px 0px` : "none"};
   }
+
+  .home {
+    border-bottom: ${(props) =>
+            props.condition ? `2px solid ${theme.turquois}` : "none"};
+    padding: ${(props) =>
+            props.condition ? `18px 0px` : "none"};
+  }
+
   .projects {
     border-bottom: ${(props) =>
-    props.condition1 ? `4px solid ${theme.turquois}` : "none"};
+            props.condition ? `4px solid ${theme.turquois}` : "none"};
   }
+
   .skills {
     border-bottom: ${(props) =>
-    props.condition2 ? `4px solid ${theme.turquois}` : "none"};
+            props.condition2 ? `4px solid ${theme.turquois}` : "none"};
   }
+
   .contact {
     border-bottom: ${(props) =>
-    props.condition3 ? `4px solid ${theme.turquois}` : "none"};
+            props.condition3 ? `4px solid ${theme.turquois}` : "none"};
   }
-  .logo{
+
+  .logo {
     width: 10rem;
     height: 5rem;
     position: relative;
     top: 3rem;
     left: -5rem;
   }
+
   .profile {
     width: .5rem;
     height: 2rem;
     position: relative;
     margin-left: -4rem;
   }
-  .instagram{
-        position: relative;
+
+  .instagram {
+    position: relative;
     left: 8rem;
   }
 `;
@@ -89,8 +106,8 @@ function Navbar(props) {
             <nav>
                 <ul>
 
-                    <li>
-                        <Link to="/">Home</Link>
+                    <li >
+                        <Link className='home' to="/">Home</Link>
                     </li>
                     <li>
                         <Link className="about" to="/About">

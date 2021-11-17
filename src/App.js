@@ -14,6 +14,8 @@ import Navbar from "./Navbar/Navbar";
 import NearbySection from "./NearbySection/NearbySection";
 import GridSection from "./Grid/GridSection";
 import Footer from "./Footer/Footer";
+import AddPost from "./AddPost/Post";
+import PostPage from "./PostPage/PostPage";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -52,9 +54,13 @@ export default function App() {
               <Navbar />
               <About />
             </Route>
-            {/*<Route path="/dashboard">*/}
-            {/*  <Dashboard />*/}
-            {/*</Route>*/}
+            <Route path="/Addpost">
+              <AddPost />
+            </Route>
+            <Route path="/Post">
+              <Navbar />
+              <PostPage />
+            </Route>
           </Switch>
       </Router>
   );

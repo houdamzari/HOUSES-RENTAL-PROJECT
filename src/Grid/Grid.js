@@ -12,6 +12,7 @@ const Container = styled.div`
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 30px;
     grid-row-gap: 30px;
+    height: 150vh;
   }
 
 

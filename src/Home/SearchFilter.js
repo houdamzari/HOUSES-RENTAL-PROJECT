@@ -28,6 +28,7 @@ const Container = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 999999;
+
   .dropdown{
       position: relative;
       
@@ -128,6 +129,8 @@ const Container = styled.div`
     border-radius: 10px;
 
   }
+
+
   
   
     
@@ -138,6 +141,7 @@ function SearchFilter(props) {
     const [location,setLocation] = useState('')
     const [check,setCheck] = useState(false)
     const [checkk,setCheckk] = useState(false)
+    const [date,setDate] = useState(null)
     const startDate = new Date();
 
     const endDate = new Date();
@@ -190,10 +194,22 @@ function SearchFilter(props) {
                     </ul>
                 </div>
             </div>
-                <DateRangePicker initialSettings={{ startDate, endDate }}>
-                    <input type="text" className="form-control col-4" />
 
-                </DateRangePicker>
+                <DateRangePicker   autoUpdateInput={false}
+                                                               startDate={startDate}
+                                                               endDate={endDate}
+                                                               locale={{ format: "DD/MM/YYYY" }}
+                                                               onApply={(event, picker) => {
+                                                                   setDate({ start :picker.startDate.format("DD/MM/YYYY"),
+                                                                       end: picker.endDate.format("DD/MM/YYYY")
+                                                                   })}}
+                                                               autoApply={true}  >
+                <input type="text" className="form-control" />
+            </DateRangePicker>
+
+
+
+
                 <div className='date'><FontAwesomeIcon className='dateicon' icon={faClock}></FontAwesomeIcon>
                 </div>
                <div className='btn search'><Button /></div>
