@@ -16,6 +16,7 @@ import GridSection from "./Grid/GridSection";
 import Footer from "./Footer/Footer";
 import AddPost from "./AddPost/Post";
 import PostPage from "./PostPage/PostPage";
+import Profile from "./Profile/Profile";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -60,6 +61,10 @@ export default function App() {
             <Route path="/Post">
               <Navbar />
               <PostPage />
+            </Route>
+            <Route path="/Profile">
+              <Navbar />
+              <Profile />
             </Route>
           </Switch>
       </Router>

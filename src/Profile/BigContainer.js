@@ -1,19 +1,21 @@
 import React from 'react';
 import styled from "styled-components";
 import {theme} from "../Utilities/theme";
-import BigContainer from "./BigContainer";
+import PictureSection from "./PictureSection";
 
 const Container = styled.div`
-
+    
+    display: flex;
+  flex-direction: row;
+  gap: 10rem;
     
 `
-function Profile(props) {
+function BigContainer(props) {
     return (
         <Container>
-                <BigContainer/>
-
+            <PictureSection/>
         </Container>
     );
 }
 
-export default Profile;
+export default BigContainer;
