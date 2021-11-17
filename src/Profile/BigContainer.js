@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {theme} from "../Utilities/theme";
 import PictureSection from "./PictureSection";
+import Heading from "./Heading";
 
 const Container = styled.div`
     
@@ -13,7 +14,9 @@ const Container = styled.div`
 function BigContainer(props) {
     return (
         <Container>
+            <div></div>
             <PictureSection/>
+            <Heading/>
         </Container>
     );
 }

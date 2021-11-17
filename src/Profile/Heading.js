@@ -8,20 +8,8 @@ const Container = styled.div`
         text-transform: uppercase;
         position: relative;
       }
-  p{
-    color: grey;
-    font-size: .7rem;
-  }
-      .flex{
-        display: flex;
-        flex-direction: row;
-        gap: 4.5rem;
-        align-items: center;
-      }
-    h4{
-      color: ${theme.green};
-    }
   
+      
   `
 function Heading() {
     return (
