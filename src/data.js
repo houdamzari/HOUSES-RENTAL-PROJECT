@@ -100,7 +100,7 @@ export const data = [
     location: {
       locationId: "sAMbvwAPhNab7ufNz2MqBlcvFHgz1X",
       studentId: "9opKgSJelpKnjxqkn6QGz7OE2hA7WD2sK",
-      coordinates: [-5, 35],
+      coordinates: [-5, 35.78],
     },
   },
   {
@@ -204,7 +204,7 @@ export const data = [
     location: {
       locationId: "sAMbvwAPhNab7ufNz2MqBlcvFHgz1X",
       studentId: "9opKgSJelpKnjxqkn6QGz7OE2hA7WD2sK",
-      coordinates: [-5, 35],
+      coordinates: [-6, 35],
     },
   },
   {
@@ -264,7 +264,34 @@ export const data = [
     location: {
       locationId: "sAMbvwAPhNab7ufNz2MqBlcvFHgz1X",
       studentId: "9opKgSJelpKnjxqkn6QGz7OE2hA7WD2sK",
-      coordinates: [-5, 35],
+      coordinates: [-5, 36],
     },
+  },
+];
+
+export const users = [
+  {
+    firstName: " amine",
+    lastName: "ddd",
+    email: "houdamzari@gmail.com",
+    password: "123456",
+    image: "im an image",
+    gender: "homme",
+  },
+  {
+    firstName: " amine",
+    lastName: "ddd",
+    email: "amineehaezz@gmail.com",
+    password: "123456",
+    image: "im an image",
+    gender: "homme",
+  },
+  {
+    firstName: " amine",
+    lastName: "ddd",
+    email: "salamsalam@gmail.com",
+    password: "123456",
+    image: "im an image",
+    gender: "homme",
   },
 ];

@@ -6,11 +6,80 @@ import Card from "../Card/Card";
 import HeaderSlider from "./HeaderSlider";
 import Spacer from "../Utilities/Spacer";
 import { data } from "../data";
-
+import { getSafe } from "../Utilities/helpers";
+import { useCurrentPosition } from "../Utilities/useCurrentPosition";
+import { orderByDistance, getDistance } from "geolib";
 const Container = styled.div``;
 function NearbySection(props) {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
+  const [position] = useCurrentPosition();
+  const [userPos, setUserPos] = React.useState({});
+  const [nearest, setNearest] = React.useState([]);
+  React.useEffect(() => {
+    if (
+      position &&
+      position.coords &&
+      position.coords.latitude &&
+      position.coords.longitude
+    ) {
+      setUserPos({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      });
+    }
+  }, [position]);
+  React.useEffect(() => {
+    if (data) {
+      let output = getSafe(() => data);
+      if (userPos) {
+        try {
+          output = output
+            .map((o, i) => {
+              return {
+                ...o,
+                distance: getDistance(o.location?.coordinates, {
+                  latitude: userPos.latitude,
+                  longitude: userPos.longitude,
+                }),
+              };
+            })
+            .sort((s, v) => s.distance - v.distance);
+        } catch (error) {
+          console.error("invalid coordinates at !origin");
+        }
+      }
+
+      if (userPos) {
+        try {
+          output = orderByDistance(
+            { latitude: userPos.latitude, longitude: userPos.longitude },
+            // eslint-disable-next-line
+
+            output.map((t) => {
+              if (
+                t &&
+                t.location &&
+                t.location?.coordinates[1] &&
+                t.location?.coordinates[0]
+              ) {
+                return {
+                  ...t,
+                  latitude: getSafe(() => t.location.coordinates[1]),
+                  longitude: getSafe(() => t.location.coordinates[0]),
+                };
+              }
+              return false;
+            })
+          );
+        } catch (error) {
+          console.error("invalid coordinates");
+        }
+        setNearest(output);
+      }
+    }
+  }, [userPos]);
+  console.log(nearest);
   return (
     <Container>
       <Spacer margin="4rem" />
@@ -22,7 +91,8 @@ function NearbySection(props) {
       <HeaderSlider
         navigationPrevRef={navigationPrevRef}
         navigationNextRef={navigationNextRef}
-        img={data}
+        img={nearest}
+        userPos={userPos}
       />
       <Spacer margin="7rem" />
     </Container>

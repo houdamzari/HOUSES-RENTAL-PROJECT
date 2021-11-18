@@ -5,9 +5,7 @@ import { theme } from "../Utilities/theme";
 import logo from "../Home/media/LOGO.png";
 import instagram from "./media/instagram.svg";
 import profile from "./media/profile.svg";
-
-
-
+import { users } from "../data";
 
 const Container = styled.div`
   position: relative;
@@ -23,7 +21,6 @@ const Container = styled.div`
     list-style: none;
     justify-content: space-between;
     margin-left: 6rem;
-
   }
 
   li > * {
@@ -36,36 +33,33 @@ const Container = styled.div`
     letter-spacing: 4px;
     position: relative;
     top: 1.5rem;
-
   }
 
   .about {
     border-bottom: ${(props) =>
-            props.condition1 ? `2px solid ${theme.turquois}` : "none"};
-    padding: ${(props) =>
-            props.condition1 ? `18px 0px` : "none"};
+      props.condition1 ? `2px solid ${theme.turquois}` : "none"};
+    padding: ${(props) => (props.condition1 ? `18px 0px` : "none")};
   }
 
   .home {
     border-bottom: ${(props) =>
-            props.condition ? `2px solid ${theme.turquois}` : "none"};
-    padding: ${(props) =>
-            props.condition ? `18px 0px` : "none"};
+      props.condition ? `2px solid ${theme.turquois}` : "none"};
+    padding: ${(props) => (props.condition ? `18px 0px` : "none")};
   }
 
   .projects {
     border-bottom: ${(props) =>
-            props.condition ? `4px solid ${theme.turquois}` : "none"};
+      props.condition ? `4px solid ${theme.turquois}` : "none"};
   }
 
   .skills {
     border-bottom: ${(props) =>
-            props.condition2 ? `4px solid ${theme.turquois}` : "none"};
+      props.condition2 ? `4px solid ${theme.turquois}` : "none"};
   }
 
   .contact {
     border-bottom: ${(props) =>
-            props.condition3 ? `4px solid ${theme.turquois}` : "none"};
+      props.condition3 ? `4px solid ${theme.turquois}` : "none"};
   }
 
   .logo {
@@ -77,7 +71,7 @@ const Container = styled.div`
   }
 
   .profile {
-    width: .5rem;
+    width: 0.5rem;
     height: 2rem;
     position: relative;
     margin-left: -4rem;
@@ -90,49 +84,60 @@ const Container = styled.div`
 `;
 
 function Navbar(props) {
-    const location = useLocation();
-    const condition = location.pathname === "/";
-    const condition1 = location.pathname === "/About";
-    // const condition2 = location.pathname === "/skills";
-    // const condition3 = location.pathname === "/contact";
+  const location = useLocation();
+  const condition = location.pathname === "/";
+  const condition1 = location.pathname === "/About";
+  React.useEffect(() => {
+    if (
+      window.localStorage.getItem("login") &&
+      window.localStorage.getItem("login") !== "true"
+    ) {
+      window.localStorage.setItem("login", false);
+    }
+  });
+  return (
+    <Container condition={condition} condition1={condition1}>
+      <nav>
+        <ul>
+          <li>
+            <Link className="home" to="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link className="about" to="/About">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <img className="logo" src={logo} alt="logo" />
+            </Link>
+          </li>
 
-    return (
-        <Container
-            condition={condition}
-            condition1={condition1}
-            // condition2={condition2}
-            // condition3={condition3}
-        >
-            <nav>
-                <ul>
-
-                    <li >
-                        <Link className='home' to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link className="about" to="/About">
-                            About
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/"><img className='logo' src={logo} alt="logo"/></Link>
-                    </li>
-
-                    <li>
-                        <Link className="instagram" to="/projects">
-                            <img src={instagram} alt="instagram"/>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link className="profile" to="/Profile">
-                            <img src={profile} alt="profile"/>
-
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
-        </Container>
-    );
+          <li>
+            <Link className="instagram" to="/projects">
+              <img src={instagram} alt="instagram" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="profile"
+              to={
+                window.localStorage.getItem("login") === "false"
+                  ? "/login"
+                  : window.localStorage.getItem("login") === "true"
+                  ? "/Profile"
+                  : null
+              }
+            >
+              <img src={profile} alt="profile" />
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </Container>
+  );
 }
 
 export default Navbar;
