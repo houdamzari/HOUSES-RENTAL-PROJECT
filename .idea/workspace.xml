@@ -4,12 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84513de6-7a59-495d-99e4-1c1bf173d14a" name="Changes" comment="'UPDATES'">
-      <change afterPath="$PROJECT_DIR$/src/Profile/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Profile/InformationBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile/BigContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/BigContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile/Heading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/Heading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile/PictureSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/PictureSection.js" afterDir="false" />
+    <list default="true" id="679f15cf-d773-41b6-a7e9-ed144cc01976" name="Changes" comment="'Profile-done'">
+      <change afterPath="$PROJECT_DIR$/src/PostPage/Map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utilities/helpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utilities/useCurrentPosition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NearbySection/HeaderSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NearbySection/HeaderSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NearbySection/NearbySection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NearbySection/NearbySection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostPage/BigContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/BigContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostPage/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostPage/Comodities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Comodities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostPage/Description.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Description.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostPage/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostPage/Heading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Heading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostPage/Requirements.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Requirements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile/InformationBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/InformationBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/PostPage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -51,11 +70,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\RENTAL APP\rental-app\src\Profile" />
       <recent name="D:\RENTAL APP\rental-app\src\PostPage" />
       <recent name="D:\RENTAL APP\rental-app\src\AddPost\media" />
       <recent name="D:\RENTAL APP\rental-app\src\AddPost" />
       <recent name="D:\RENTAL APP\rental-app\src\Footer" />
+      <recent name="D:\RENTAL APP\rental-app\src\Footer\media" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\RENTAL APP\rental-app\src\About\media" />
@@ -67,7 +86,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="84513de6-7a59-495d-99e4-1c1bf173d14a" name="Changes" comment="" />
+      <changelist id="679f15cf-d773-41b6-a7e9-ed144cc01976" name="Changes" comment="'Profile-done'" />
       <created>1635273370089</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -94,8 +113,8 @@
       <workItem from="1636383118350" duration="4156000" />
       <workItem from="1636468177364" duration="6536000" />
       <workItem from="1637163321426" duration="7896000" />
-      <workItem from="1637180562999" duration="5581000" />
-      <workItem from="1637186737398" duration="1953000" />
+      <workItem from="1637180562999" duration="1185000" />
+      <workItem from="1637252862540" duration="604000" />
     </task>
     <task id="LOCAL-00001" summary="'login-register-home1-done'">
       <created>1635808161355</created>
@@ -118,21 +137,7 @@
       <option name="project" value="LOCAL" />
       <updated>1636053103926</updated>
     </task>
-    <task id="LOCAL-00004" summary="'UPDATES'">
-      <created>1637183251200</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1637183251200</updated>
-    </task>
-    <task id="LOCAL-00005" summary="'UPDATES'">
-      <created>1637183363272</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1637183363272</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +160,7 @@
     <MESSAGE value="'login-register-home1-done'" />
     <MESSAGE value="'Aboutpage-done'" />
     <MESSAGE value="'footer-done'" />
-    <MESSAGE value="'UPDATES'" />
-    <option name="LAST_COMMIT_MESSAGE" value="'UPDATES'" />
+    <MESSAGE value="'Profile-done'" />
+    <option name="LAST_COMMIT_MESSAGE" value="'Profile-done'" />
   </component>
 </project>
