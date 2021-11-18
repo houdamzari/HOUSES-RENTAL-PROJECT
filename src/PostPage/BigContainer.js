@@ -10,6 +10,7 @@ import Requirements from "../PostPage/Requirements";
 import { useParams } from "react-router-dom";
 import { data } from "../data";
 import { getSafe } from "../Utilities/helpers";
+import Map from "./Map";
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -31,6 +32,7 @@ function BigContainer(props) {
     <Container>
       <div>
         <Grid post={getSafe(() => post[0])} getSafe={getSafe} />
+        <Map mapCenter={getSafe(() => post[0].location.coordinates)} />
       </div>
       <div>
         <Heading

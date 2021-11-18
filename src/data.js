@@ -48,7 +48,7 @@ export const data = [
     location: {
       locationId: "sAMbvwAPhNab7ufNz2MqBlcvFHgz1X",
       studentId: "9opKgSJelpKnjxqkn6QGz7OE2hA7WD2sK",
-      coordinates: [-6, 32],
+      coordinates: [-5.36, 35.56],
     },
   },
   {
@@ -100,7 +100,7 @@ export const data = [
     location: {
       locationId: "sAMbvwAPhNab7ufNz2MqBlcvFHgz1X",
       studentId: "9opKgSJelpKnjxqkn6QGz7OE2hA7WD2sK",
-      coordinates: [-6, 32],
+      coordinates: [-5, 35],
     },
   },
   {
@@ -152,7 +152,7 @@ export const data = [
     location: {
       locationId: "sAMbvwAPhNab7ufNz2MqBlcvFHgz1X",
       studentId: "9opKgSJelpKnjxqkn6QGz7OE2hA7WD2sK",
-      coordinates: [-6, 32],
+      coordinates: [-5, 35],
     },
   },
   {
@@ -204,7 +204,7 @@ export const data = [
     location: {
       locationId: "sAMbvwAPhNab7ufNz2MqBlcvFHgz1X",
       studentId: "9opKgSJelpKnjxqkn6QGz7OE2hA7WD2sK",
-      coordinates: [-6, 32],
+      coordinates: [-5, 35],
     },
   },
   {
@@ -264,7 +264,7 @@ export const data = [
     location: {
       locationId: "sAMbvwAPhNab7ufNz2MqBlcvFHgz1X",
       studentId: "9opKgSJelpKnjxqkn6QGz7OE2hA7WD2sK",
-      coordinates: [-6, 32],
+      coordinates: [-5, 35],
     },
   },
 ];

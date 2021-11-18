@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation} from 'swiper'
+import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper-bundle.css";
 import isMobile from "ismobilejs";
 import HeaderSliderImg from "./HeaderSliderImg";
 import Card from "../Card/Card";
 
-SwiperCore.use([Navigation])
+SwiperCore.use([Navigation]);
 
 const Wrapper = styled.div`
   width: 110%;
@@ -22,21 +22,20 @@ const Wrapper = styled.div`
   }
 `;
 
-function HeaderSlider({ img,navigationNextRef,navigationPrevRef }) {
+function HeaderSlider({ img, navigationNextRef, navigationPrevRef }) {
   const [activeSlideHeader, setActiveSliderHeader] = React.useState(null);
 
   return (
     <Wrapper>
       <Swiper
-          navigation={{
-              prevEl: navigationPrevRef.current,
-              nextEl: navigationNextRef.current,
-          }}
-
+        navigation={{
+          prevEl: navigationPrevRef.current,
+          nextEl: navigationNextRef.current,
+        }}
         onInit={(swiper) => {
           setActiveSliderHeader(swiper.activeIndex);
-            swiper.params.navigation.prevEl = navigationPrevRef.current;
-            swiper.params.navigation.nextEl = navigationNextRef.current;
+          swiper.params.navigation.prevEl = navigationPrevRef.current;
+          swiper.params.navigation.nextEl = navigationNextRef.current;
         }}
         slidesPerView={isMobile().phone ? 2 : 5}
         initialSlide={2}
@@ -48,7 +47,7 @@ function HeaderSlider({ img,navigationNextRef,navigationPrevRef }) {
       >
         {img.map((item, i) => (
           <SwiperSlide key={i + "98989"}>
-            <Card img={item} id={item.id} activeSlide={activeSlideHeader} />
+            <Card data={item} id={i} activeSlide={activeSlideHeader} />
           </SwiperSlide>
         ))}
       </Swiper>

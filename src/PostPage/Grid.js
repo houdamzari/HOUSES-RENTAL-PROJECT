@@ -3,27 +3,28 @@ import styled from "styled-components";
 import { theme } from "../Utilities/theme";
 
 const Container = styled.div`
-  width: 40rem;
+  width: 50vw;
   height: 26rem;
 
   .box1 {
     img {
-      width: 20rem;
+      width: 25vw;
       height: 26rem;
+      object-fit: cover;
     }
   }
   .box2 {
     img {
-      width: 20rem;
+      width: 25vw;
       height: 12.5rem;
       margin-bottom: 1rem;
+      object-fit: cover;
     }
   }
   .wrapper {
     width: 40rem;
     height: 26rem;
 
-    position: fixed;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
