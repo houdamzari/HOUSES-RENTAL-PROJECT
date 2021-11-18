@@ -131,6 +131,9 @@ function Card({ data, id, activeSlide }) {
   let history = useHistory();
   return (
     <Container id={id} activeSlide={activeSlide}>
+      <h5 className="distance">
+        {Math.round(Math.round(data.distance) / 1000) + "KMs away from you"}
+      </h5>
       <div className="wrapper">
         <img src={data.images[0].url} alt="" />
         <div className="condition-section">

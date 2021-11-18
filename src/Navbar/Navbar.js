@@ -95,7 +95,6 @@ function Navbar(props) {
       window.localStorage.setItem("login", false);
     }
   });
-  console.log(window.localStorage.getItem("login"));
   return (
     <Container condition={condition} condition1={condition1}>
       <nav>

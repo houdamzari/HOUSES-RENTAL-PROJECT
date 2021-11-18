@@ -12,6 +12,12 @@ SwiperCore.use([Navigation]);
 const Wrapper = styled.div`
   width: 110%;
   margin-left: -100px;
+  .distance {
+    text-align: center;
+    background: #fdf189;
+    width: 100%;
+    height: 100%;
+  }
   @media (max-width: 768px) {
     width: 100%;
     margin: 0;
