@@ -268,3 +268,30 @@ export const data = [
     },
   },
 ];
+
+export const users = [
+  {
+    firstName: " amine",
+    lastName: "ddd",
+    email: "houdamzari@gmail.com",
+    password: "123456",
+    image: "im an image",
+    gender: "homme",
+  },
+  {
+    firstName: " amine",
+    lastName: "ddd",
+    email: "amineehaezz@gmail.com",
+    password: "123456",
+    image: "im an image",
+    gender: "homme",
+  },
+  {
+    firstName: " amine",
+    lastName: "ddd",
+    email: "salamsalam@gmail.com",
+    password: "123456",
+    image: "im an image",
+    gender: "homme",
+  },
+];
