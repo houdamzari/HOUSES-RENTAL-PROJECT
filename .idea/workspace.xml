@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84513de6-7a59-495d-99e4-1c1bf173d14a" name="Changes" comment="'footer-done'">
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/Profile.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="203VemOFgNIEoCct6NR2IYppVBr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/PostPage" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\RENTAL APP\rental-app\src\PostPage" />
+      <recent name="D:\RENTAL APP\rental-app\src\AddPost\media" />
+      <recent name="D:\RENTAL APP\rental-app\src\AddPost" />
+      <recent name="D:\RENTAL APP\rental-app\src\Footer" />
+      <recent name="D:\RENTAL APP\rental-app\src\Footer\media" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\RENTAL APP\rental-app\src\About\media" />
+      <recent name="D:\RENTAL APP\rental-app\src\Home\media" />
+      <recent name="D:\RENTAL APP\rental-app\src\Home" />
+      <recent name="D:\RENTAL APP\rental-app\src\Navbar\media" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84513de6-7a59-495d-99e4-1c1bf173d14a" name="Changes" comment="" />
+      <created>1635273370089</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635273370089</updated>
+      <workItem from="1635273422277" duration="2824000" />
+      <workItem from="1635354664432" duration="5961000" />
+      <workItem from="1635454796372" duration="698000" />
+      <workItem from="1635544683199" duration="15000" />
+      <workItem from="1635591289114" duration="800000" />
+      <workItem from="1635592680824" duration="4414000" />
+      <workItem from="1635605054913" duration="916000" />
+      <workItem from="1635636934796" duration="3769000" />
+      <workItem from="1635678677516" duration="6354000" />
+      <workItem from="1635687871033" duration="14180000" />
+      <workItem from="1635722016367" duration="5139000" />
+      <workItem from="1635761879011" duration="25008000" />
+      <workItem from="1635851859569" duration="7974000" />
+      <workItem from="1635876839308" duration="4470000" />
+      <workItem from="1635892324723" duration="5762000" />
+      <workItem from="1635932727688" duration="824000" />
+      <workItem from="1635947356425" duration="9948000" />
+      <workItem from="1636045448780" duration="5956000" />
+      <workItem from="1636052244600" duration="629000" />
+      <workItem from="1636383118350" duration="4156000" />
+      <workItem from="1636468177364" duration="6536000" />
+      <workItem from="1637163321426" duration="7896000" />
+      <workItem from="1637180562999" duration="1185000" />
+    </task>
+    <task id="LOCAL-00001" summary="'login-register-home1-done'">
+      <created>1635808161355</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635808161355</updated>
+    </task>
+    <task id="LOCAL-00002" summary="'Aboutpage-done'">
+      <created>1635982567045</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635982567045</updated>
+    </task>
+    <task id="LOCAL-00003" summary="'footer-done'">
+      <created>1636053103926</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636053103926</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="'login-register-home1-done'" />
+    <MESSAGE value="'Aboutpage-done'" />
+    <MESSAGE value="'footer-done'" />
+    <option name="LAST_COMMIT_MESSAGE" value="'footer-done'" />
+  </component>
+</project>
