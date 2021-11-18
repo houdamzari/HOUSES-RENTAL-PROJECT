@@ -1,38 +1,29 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
-import {theme} from "../Utilities/theme";
-import Spacer from "../Utilities/Spacer";
 import Card from "./Card";
-
+import { data } from "../data";
 
 const Container = styled.div`
   .parent {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 30px;
+
+    grid-column-gap: 50px;
     grid-row-gap: 30px;
-    height: 150vh;
+    height: 100%;
+    margin-bottom: 50px;
   }
-
-
-
-`
+`;
 function Grid(props) {
-    return (
-        <Container>
-                <div className="parent">
-                    <Card  />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-
-
-                </div>
-        </Container>
-    );
+  return (
+    <Container>
+      <div className="parent">
+        {data.map((p) => (
+          <Card data={p} />
+        ))}
+      </div>
+    </Container>
+  );
 }
 
 export default Grid;

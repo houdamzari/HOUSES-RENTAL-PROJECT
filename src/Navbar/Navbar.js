@@ -124,7 +124,7 @@ function Navbar(props) {
                         </Link>
                     </li>
                     <li>
-                        <Link className="profile" to="/contact">
+                        <Link className="profile" to="/Profile">
                             <img src={profile} alt="profile"/>
 
                         </Link>
