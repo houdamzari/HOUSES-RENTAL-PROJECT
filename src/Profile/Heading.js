@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
 import {theme} from "../Utilities/theme";
+import Spacer from "../Utilities/Spacer";
 
 
 const Container = styled.div`
@@ -8,13 +9,21 @@ const Container = styled.div`
         text-transform: uppercase;
         position: relative;
       }
+  p{
+    position: relative;
+    left: 4rem;
+    font-size: 1.2rem;
+  }
   
       
   `
 function Heading() {
     return (
         <Container>
-            <h2> Houda MZARI </h2>
+            <h3> Houda MZARI </h3>
+
+            <p>City</p>
+
 
         </Container>
     );
