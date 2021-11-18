@@ -11,7 +11,6 @@ import Footer from "./Footer/Footer";
 import AddPost from "./AddPost/Post";
 import PostPage from "./PostPage/PostPage";
 import Profile from "./Profile/Profile";
-<<<<<<< HEAD
 
 export default function App() {
   return (
@@ -47,58 +46,5 @@ export default function App() {
         </Route>
       </Switch>
     </Router>
-=======
-
-// This site has 3 pages, all of which are rendered
-// dynamically in the browser (not server rendered).
-//
-// Although the page does not ever refresh, notice how
-// React Router keeps the URL up to date as you navigate
-// through the site. This preserves the browser history,
-// making sure things like the back button and bookmarks
-// work properly.
-
-export default function App() {
-  return (
-      <Router>
-          {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
-          <Switch>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/register">
-              <Register />
-            </Route>
-            <Route exact path="/">
-              <Navbar />
-              <Home />
-              <NearbySection />
-              <GridSection />
-              <Footer />
-            </Route>
-            <Route exact path="/About">
-              <Navbar />
-              <About />
-            </Route>
-            <Route path="/Addpost">
-              <AddPost />
-            </Route>
-            <Route path="/Post">
-              <Navbar />
-              <PostPage />
-            </Route>
-            <Route path="/Profile">
-              <Navbar />
-              <Profile />
-            </Route>
-          </Switch>
-      </Router>
->>>>>>> f41d5adbed3cb63a4248feac020bf0c075be71cc
   );
 }
