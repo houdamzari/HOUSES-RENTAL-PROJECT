@@ -79,7 +79,7 @@ function NearbySection(props) {
       }
     }
   }, [userPos]);
-  console.log(nearest);
+
   return (
     <Container>
       <Spacer margin="4rem" />

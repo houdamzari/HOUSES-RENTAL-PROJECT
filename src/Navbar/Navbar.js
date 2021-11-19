@@ -88,13 +88,10 @@ function Navbar(props) {
   const condition = location.pathname === "/";
   const condition1 = location.pathname === "/About";
   React.useEffect(() => {
-    if (
-      window.localStorage.getItem("login") &&
-      window.localStorage.getItem("login") !== "true"
-    ) {
+    if (window.localStorage.getItem("login") !== "true") {
       window.localStorage.setItem("login", false);
     }
-  });
+  }, []);
   return (
     <Container condition={condition} condition1={condition1}>
       <nav>
