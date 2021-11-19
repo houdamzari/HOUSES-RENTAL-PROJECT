@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ReactMapboxGl, { Layer, Source, ZoomControl } from "react-mapbox-gl";
+import ReactMapboxGl, { Layer, Source } from "react-mapbox-gl";
 import { MAPBOX_TOKEN } from "../Utilities/helpers";
 import { theme } from "../Utilities/theme";
 const Map = ReactMapboxGl({
