@@ -147,24 +147,29 @@ function SearchFilter(props) {
     const endDate = new Date();
     return (
         <Container>
-            <div className="dropdown">
-                <input checked={check} onChange={(e)=>setCheck(!check)} type="checkbox" />
-                <button className="dropbtn">{gender.length>0?gender:'Gender'}
-                <FontAwesomeIcon className='gender' icon={faVenusMars}></FontAwesomeIcon>
-                </button>
-                <div className="dropdown-content geender">
-                    <ul>
-                    <li onClick={(e)=> {
-                        setGender(e.target.innerHTML);
-                        setCheck(false)
-                    }}>Male</li>
-                    <li  onClick={(e)=> {
-                        setGender(e.target.innerHTML);
-                            setCheck(false)
-                    }}>Female</li>
-                    </ul>
-                </div>
-            </div>
+            {/*<div className="dropdown">*/}
+            {/*    <input checked={check} onChange={(e)=>setCheck(!check)} type="checkbox" />*/}
+            {/*    <button className="dropbtn">{gender.length>0?gender:'Gender'}*/}
+            {/*    <FontAwesomeIcon className='gender' icon={faVenusMars}></FontAwesomeIcon>*/}
+            {/*    </button>*/}
+            {/*    <div className="dropdown-content geender">*/}
+            {/*        <ul>*/}
+            {/*        <li onClick={(e)=> {*/}
+            {/*            setGender(e.target.innerHTML);*/}
+            {/*            setCheck(false)*/}
+            {/*        }}>Male</li>*/}
+            {/*        <li  onClick={(e)=> {*/}
+            {/*            setGender(e.target.innerHTML);*/}
+            {/*                setCheck(false)*/}
+            {/*        }}>Female</li>*/}
+            {/*        </ul>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+            <select >
+                  <ul>
+                      <li><input type="radio" value="Male" name="gender" /> Male
+            </li></ul>
+            </select>
             <div className="dropdown">
                 <input checked={checkk} onChange={(e)=>setCheckk(!checkk)}  type="checkbox" />
                 <button className="dropbtn">{location.length>0?location:'Location'}

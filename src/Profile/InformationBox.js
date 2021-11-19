@@ -7,55 +7,42 @@ import Button from "./Button";
 
 const Container = styled.div`
     
-      border: 1px solid #e1e1e1;
-      border-radius: 1rem;
+    
        width: 50vw;
 
-
-  .row{
-            width: 30vw;
-            height: 8rem;
-            justify-content: center;
-            align-items: center;
-        > * {
-          position: relative;
-          top: 50%;
-          left: 50%;
-          transform: translate(-0%,-200%);
-        }
-    
-    p{
-      width: 100%;
-      //margin-left: 2rem;
-    }
-          }
-   
-  span{
-    display: block;
-    width: 100%;
-
+  .form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 6rem;
+    grid-row-gap: 0px;
   }
-      
-    
-     `
+
+  .first{
+    font-size: 1.3rem;
+    letter-spacing: .4rem;
+  }
+
+
+`
 function InformationBox(props) {
     return (
         <Container>
-                <div className='row'>
-                    <p> First Name :</p>
-                    <span> Lorem ipsum dolor sit amet, consectetur </span>
-                </div>
-                <div className='row'>
-                    <p> Last Name :</p>
-                    <span> Lorem ipsum dolor sit amet, consectetur </span>
-                </div>
-                <div className='row'>
-                    <p> Gender : </p> <span> Lorem ipsum dolor sit amet, consectetur </span>
-                </div>
-                <div className='row'>
-                     <p> Email :</p> <span> Lorem ipsum dolor sit amet, consectetur </span>
-                </div>
+            <Spacer margin='2rem'/>
 
+            <Heading/>
+            <Spacer margin='4rem'/>
+            <div className='form'>
+                <p className="first">First Name :</p>
+                <p className="second">XOOOOOOOO</p>
+                <p className="first">Last Name :</p>
+                <p className="second">XOOOOOOOO</p>
+                <p className="first">Gender :</p>
+                <p className="second">XOOOOOOOO</p>
+                <p className="first">Email :</p>
+                <p className="second">XOOOOOOOO</p>
+
+            </div>
         </Container>
     );
 }

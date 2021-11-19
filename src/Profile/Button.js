@@ -7,6 +7,7 @@ import {useHistory,useLocation} from "react-router-dom";
 const Container = styled.div`
       position: relative;
       margin-bottom: 5rem;
+  margin-left: 6rem;
   .btn{
       display: block;
       width: 10rem;

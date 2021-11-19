@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="679f15cf-d773-41b6-a7e9-ed144cc01976" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddPost/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddPost/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home/SearchFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/SearchFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile/Heading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/Heading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile/InformationBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/InformationBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile/PictureSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/PictureSection.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +48,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="D:\WebStorm 2021.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -93,7 +98,7 @@
       <workItem from="1637163321426" duration="7896000" />
       <workItem from="1637180562999" duration="1185000" />
       <workItem from="1637252862540" duration="1794000" />
-      <workItem from="1637338366450" duration="3057000" />
+      <workItem from="1637338366450" duration="10766000" />
     </task>
     <task id="LOCAL-00001" summary="'login-register-home1-done'">
       <created>1635808161355</created>
@@ -123,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637340580073</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=".">
+      <created>1637342335974</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637342335974</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
