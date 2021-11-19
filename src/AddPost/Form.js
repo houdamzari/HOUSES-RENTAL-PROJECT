@@ -4,6 +4,7 @@ import {theme} from "../Utilities/theme";
 import Button from "./Button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearchLocation, faVenusMars} from "@fortawesome/free-solid-svg-icons";
+import Spacer from "../Utilities/Spacer";
 
 const Container = styled.div`
 
@@ -18,8 +19,17 @@ const Container = styled.div`
         margin: .7rem;
         border-radius: .5rem;
         background-color:rgba(2, 102, 112,0.1);
-      
+          
 }
+    .flex{
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  .coordinates{
+    width: 11rem;
+    height: 2.5rem;
+  }
       h5{
           position: relative;
         font-weight: 300; 
@@ -144,11 +154,23 @@ function Form(props) {
                         </ul>
                     </div>
                 </div>
-            <h5 className="formlabel">Adresse :</h5>
-            <div>
-                <input type="text" className="formcontrol" id="inputPassword"/>
-            </div>
-            </div>
+                <h5 className="formlabel">Adresse coordinates  :</h5>
+                <Spacer margin='2rem'/>
+                <div className='flex'>
+
+                    <div>
+                        <h5 className="formlabel">Longtitude  :</h5>
+
+                        <input type="text" className="formcontrol coordinates" id="inputPassword"/>
+                    </div>
+                    <div>
+                        <h5 className="formlabel">Laptitude :</h5>
+
+                        <input type="text" className="formcontrol coordinates" id="inputPassword"/>
+                    </div>
+                </div>
+                </div>
+
             <div className="secondflex">
                 <h5 className="formlabel">Price :</h5>
                 <div>

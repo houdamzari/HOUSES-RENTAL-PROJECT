@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="679f15cf-d773-41b6-a7e9-ed144cc01976" name="Changes" comment="'Profile-done'">
+    <list default="true" id="679f15cf-d773-41b6-a7e9-ed144cc01976" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home/AddPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/AddPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home/RightSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/RightSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddPost/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddPost/Form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,7 @@
       <workItem from="1637163321426" duration="7896000" />
       <workItem from="1637180562999" duration="1185000" />
       <workItem from="1637252862540" duration="1794000" />
-      <workItem from="1637338366450" duration="1842000" />
+      <workItem from="1637338366450" duration="3057000" />
     </task>
     <task id="LOCAL-00001" summary="'login-register-home1-done'">
       <created>1635808161355</created>
@@ -117,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636053103926</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".">
+      <created>1637340580073</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637340580073</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +147,7 @@
     <MESSAGE value="'Aboutpage-done'" />
     <MESSAGE value="'footer-done'" />
     <MESSAGE value="'Profile-done'" />
-    <option name="LAST_COMMIT_MESSAGE" value="'Profile-done'" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
