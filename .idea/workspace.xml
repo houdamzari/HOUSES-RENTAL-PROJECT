@@ -5,30 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="679f15cf-d773-41b6-a7e9-ed144cc01976" name="Changes" comment="'Profile-done'">
-      <change afterPath="$PROJECT_DIR$/src/PostPage/Map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utilities/helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utilities/useCurrentPosition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NearbySection/HeaderSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NearbySection/HeaderSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NearbySection/NearbySection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NearbySection/NearbySection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostPage/BigContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/BigContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostPage/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostPage/Comodities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Comodities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostPage/Description.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Description.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostPage/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Grid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostPage/Heading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Heading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostPage/Requirements.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostPage/Requirements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile/InformationBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/InformationBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home/AddPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/AddPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home/RightSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/RightSection.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +93,8 @@
       <workItem from="1636468177364" duration="6536000" />
       <workItem from="1637163321426" duration="7896000" />
       <workItem from="1637180562999" duration="1185000" />
-      <workItem from="1637252862540" duration="604000" />
+      <workItem from="1637252862540" duration="1794000" />
+      <workItem from="1637338366450" duration="1842000" />
     </task>
     <task id="LOCAL-00001" summary="'login-register-home1-done'">
       <created>1635808161355</created>
