@@ -144,7 +144,7 @@ function Card({ data }) {
             <p>{data.description}</p>
             <h5>Requirements :</h5>
             <div className="grid">
-              {data.details.conditions.map((p) => (
+              {data.details.conditions.split(",").map((p) => (
                 <h6>{p}</h6>
               ))}
             </div>

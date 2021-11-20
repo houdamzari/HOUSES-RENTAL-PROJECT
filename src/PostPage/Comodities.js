@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import BigContainer from "./BigContainer";
 
 const Container = styled.div`
   display: grid;
@@ -20,14 +19,18 @@ const Container = styled.div`
   }
 `;
 function Comodities({ post, getSafe }) {
+  const [tags, setTags] = React.useState([]);
+  React.useEffect(() => {
+    let array = [];
+    getSafe(() => post.details.tags.map((tag) => array.push(tag.slug)));
+    setTags(array);
+  }, [post]);
   return (
     <Container>
       <div>
         <input
           type="checkbox"
-          checked={getSafe(() =>
-            post.details.television === "Disponnible" ? true : false
-          )}
+          checked={getSafe(() => (tags.includes("tv") ? true : false))}
           name="TV"
         />
         <label for="TV"> TV </label>
@@ -35,9 +38,7 @@ function Comodities({ post, getSafe }) {
       <div>
         <input
           type="checkbox"
-          checked={getSafe(() =>
-            post.details.machineLaver === "Disponnible" ? true : false
-          )}
+          checked={getSafe(() => (tags.includes("wach") ? true : false))}
           name="Bathtub"
         />
         <label htmlFor="Bathtub"> Washing Machine </label>
@@ -48,9 +49,7 @@ function Comodities({ post, getSafe }) {
         <input
           type="checkbox"
           name="Balcony"
-          checked={getSafe(() =>
-            post.details.refrigerateur === "Disponnible" ? true : false
-          )}
+          checked={getSafe(() => (tags.includes("refri") ? true : false))}
         />
         <label htmlFor="Balcony"> Refrigerator </label>
       </div>
@@ -58,9 +57,7 @@ function Comodities({ post, getSafe }) {
         <input
           type="checkbox"
           name="Balcony"
-          checked={getSafe(() =>
-            post.details.chauffeEau === "Disponnible" ? true : false
-          )}
+          checked={getSafe(() => (tags.includes("heater") ? true : false))}
         />
         <label htmlFor="Balcony"> Chauffage d'eau </label>
       </div>
@@ -69,9 +66,7 @@ function Comodities({ post, getSafe }) {
         <input
           type="checkbox"
           name="Balcony"
-          checked={getSafe(() =>
-            post.details.internetAccess === "Disponnible" ? true : false
-          )}
+          checked={getSafe(() => (tags.includes("internet") ? true : false))}
         />
         <label htmlFor="Balcony"> Internet Access</label>
       </div>
@@ -79,9 +74,7 @@ function Comodities({ post, getSafe }) {
         <input
           type="checkbox"
           name="Balcony"
-          checked={getSafe(() =>
-            post.details.ascenseur === "Disponnible" ? true : false
-          )}
+          checked={getSafe(() => (tags.includes("ascenseur") ? true : false))}
         />
         <label htmlFor="Balcony"> Ascenseur </label>
       </div>

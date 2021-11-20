@@ -1,8 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import styled from "styled-components";
 import Card from "./Card";
-import { data } from "../data";
-
+import axios from "axios";
 const Container = styled.div`
   .parent {
     display: grid;
@@ -15,6 +15,12 @@ const Container = styled.div`
   }
 `;
 function Grid(props) {
+  const [data, setData] = React.useState([]);
+  React.useEffect(async () => {
+    await axios
+      .get("http://localhost:8080/posts")
+      .then(({ data }) => setData(data));
+  }, []);
   return (
     <Container>
       <div className="parent">

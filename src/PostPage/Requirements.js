@@ -20,7 +20,9 @@ const Container = styled.div`
 function Requirements({ post, getSafe }) {
   return (
     <Container>
-      {getSafe(() => post.details.conditions.map((item) => <h4>{item}</h4>))}
+      {getSafe(() =>
+        post.details.conditions.split(",").map((item) => <h4>{item}</h4>)
+      )}
     </Container>
   );
 }

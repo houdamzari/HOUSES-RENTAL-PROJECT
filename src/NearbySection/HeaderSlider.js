@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 
 function HeaderSlider({ img, navigationNextRef, navigationPrevRef }) {
   const [activeSlideHeader, setActiveSliderHeader] = React.useState(null);
-
+  console.log(img);
   return (
     <Wrapper>
       <Swiper

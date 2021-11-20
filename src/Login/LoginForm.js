@@ -4,8 +4,8 @@ import { theme } from "../Utilities/theme";
 import logo from "./media/LOGO.png";
 import { useHistory } from "react-router-dom";
 import Button from "../Login/Button";
-import { Link } from "react-router-dom";
-import { users } from "../data";
+import axios from "axios";
+
 const Container = styled.div`
   position: relative;
   left: 8rem;
@@ -28,11 +28,20 @@ const Container = styled.div`
 function LoginForm(props) {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [users, setUsers] = React.useState([]);
   let history = useHistory();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  React.useEffect(async () => {
+    await axios
+      .get("http://localhost:8080/students")
+      .then(({ data }) => setUsers(data));
+  }, []);
+
   const handleSubmit = () => {
     users.map((p) => {
-      if (p.email === email && p.password === password) {
+      if (p.email === email && p.encryptedPassword === password) {
         window.localStorage.setItem("login", true);
+        window.localStorage.setItem("userID", p.studentId);
         history.push("/");
       }
     });

@@ -8,7 +8,7 @@ import Spacer from "../Utilities/Spacer";
 import Comodities from "../PostPage/Comodities";
 import Requirements from "../PostPage/Requirements";
 import { useParams } from "react-router-dom";
-import { data } from "../data";
+import axios from "axios";
 import { getSafe } from "../Utilities/helpers";
 import Map from "./Map";
 const Container = styled.div`
@@ -23,20 +23,32 @@ const Container = styled.div`
 function BigContainer(props) {
   let { id } = useParams();
   const [post, setPost] = useState([]);
+  const [data, setData] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  React.useEffect(async () => {
+    await axios
+      .get("http://localhost:8080/posts")
+      .then(({ data }) => setData(data));
+  }, []);
   React.useEffect(() => {
     const post = data.filter((p) => p.postId === id);
     setPost(post);
-  }, [id]);
+  }, [id, data]);
 
   return (
     <Container>
       <div>
         <Grid post={getSafe(() => post[0])} getSafe={getSafe} />
-        <Map mapCenter={getSafe(() => post[0].location.coordinates)} />
+        <Map
+          mapCenter={getSafe(() => [
+            parseFloat(post[0].location.latitude),
+            parseFloat(post[0].location.longitude),
+          ])}
+        />
       </div>
       <div>
         <Heading
-          title={getSafe(() => post[0].Title)}
+          title={getSafe(() => post[0].title)}
           name={getSafe(
             () => post[0].student.lastName + " " + post[0].student.firstName
           )}

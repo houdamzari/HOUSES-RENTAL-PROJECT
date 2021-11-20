@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../Utilities/theme";
+import axios from "axios";
 import HeadingPrimary from "./HeadingPrimary";
 import Card from "../Card/Card";
 import HeaderSlider from "./HeaderSlider";
 import Spacer from "../Utilities/Spacer";
-import { data } from "../data";
 import { getSafe } from "../Utilities/helpers";
 import { useCurrentPosition } from "../Utilities/useCurrentPosition";
 import { orderByDistance, getDistance } from "geolib";
@@ -16,6 +15,14 @@ function NearbySection(props) {
   const [position] = useCurrentPosition();
   const [userPos, setUserPos] = React.useState({});
   const [nearest, setNearest] = React.useState([]);
+  const [data, setData] = React.useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  React.useEffect(async () => {
+    await axios
+      .get("http://localhost:8080/posts")
+      .then(({ data }) => setData(data));
+  }, []);
+
   React.useEffect(() => {
     if (
       position &&
@@ -38,10 +45,16 @@ function NearbySection(props) {
             .map((o, i) => {
               return {
                 ...o,
-                distance: getDistance(o.location?.coordinates, {
-                  latitude: userPos.latitude,
-                  longitude: userPos.longitude,
-                }),
+                distance: getDistance(
+                  {
+                    latitude: parseFloat(o.location?.latitude),
+                    longitude: parseFloat(o.location?.longitude),
+                  },
+                  {
+                    latitude: userPos.latitude,
+                    longitude: userPos.longitude,
+                  }
+                ),
               };
             })
             .sort((s, v) => s.distance - v.distance);
@@ -65,8 +78,8 @@ function NearbySection(props) {
               ) {
                 return {
                   ...t,
-                  latitude: getSafe(() => t.location.coordinates[1]),
-                  longitude: getSafe(() => t.location.coordinates[0]),
+                  latitude: getSafe(() => parseFloat(t.location.latitude)),
+                  longitude: getSafe(() => parseFloat(t.location.longitude)),
                 };
               }
               return false;
@@ -78,7 +91,7 @@ function NearbySection(props) {
         setNearest(output);
       }
     }
-  }, [userPos]);
+  }, [userPos, data]);
 
   return (
     <Container>

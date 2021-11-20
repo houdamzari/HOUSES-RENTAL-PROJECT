@@ -1,3 +1,5 @@
+export const tags = ["tv", "ascenseur", "internet", "heater", "wach", "refri"];
+
 export const data = [
   {
     postId: "2",
@@ -271,7 +273,7 @@ export const data = [
 
 export const users = [
   {
-    firstName: " amine",
+    firstName: "amine",
     lastName: "ddd",
     email: "houdamzari@gmail.com",
     password: "123456",
