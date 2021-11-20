@@ -14,6 +14,10 @@ import Profile from "./Profile/Profile";
 import Historique from "./Historique/Historique";
 
 export default function App() {
+  const [commo, setCommo] = React.useState([]);
+  const [location, setLocation] = React.useState("");
+  const [date, setDate] = React.useState(null);
+
   return (
     <Router>
       <Switch>
@@ -25,9 +29,14 @@ export default function App() {
         </Route>
         <Route exact path="/">
           <Navbar />
-          <Home />
+          <Home
+            setDate={setDate}
+            commo={commo}
+            setLocation={setLocation}
+            setCommo={setCommo}
+          />
           <NearbySection />
-          <GridSection />
+          <GridSection commo={commo} location={location} date={date} />
           <Footer />
         </Route>
         <Route exact path="/About">

@@ -1,17 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import styled from "styled-components";
-import {theme} from "../Utilities/theme";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faTv} from "@fortawesome/free-solid-svg-icons";
-
-import {faSearchLocation} from "@fortawesome/free-solid-svg-icons";
-import 'bootstrap/dist/css/bootstrap.css';
-import DateRangePicker from 'react-bootstrap-daterangepicker';
-import 'bootstrap-daterangepicker/daterangepicker.css';
-import {Component} from "react";
-import {faClock} from "@fortawesome/free-solid-svg-icons";
+import { theme } from "../Utilities/theme";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTv } from "@fortawesome/free-solid-svg-icons";
+import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
+import "bootstrap/dist/css/bootstrap.css";
+import DateRangePicker from "react-bootstrap-daterangepicker";
+import "bootstrap-daterangepicker/daterangepicker.css";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button";
-
 
 const Container = styled.div`
   width: 85rem;
@@ -138,92 +135,165 @@ const Container = styled.div`
 
   }
 
+`;
+function SearchFilter({ setDate, setCommo, commo, setLocation }) {
+  const [gender, setGender] = useState("");
+  const [location, setLocationd] = useState("");
+  const [check, setCheck] = useState(false);
+  const [checkkk, setCheckkk] = useState(false);
+  const [checkk, setCheckk] = useState(false);
 
-  
-  
-    
-    
-`
-function SearchFilter(props) {
-    const [gender,setGender] = useState('')
-    const [location,setLocation] = useState('')
-    const [check,setCheck] = useState(false)
-    const [checkkk,setCheckkk] = useState(false)
-    const [checkk,setCheckk] = useState(false)
-    const [date,setDate] = useState(null)
-    const startDate = new Date();
+  const startDate = new Date();
 
-    const endDate = new Date();
-    return (
-        <Container>
+  const endDate = new Date();
+  const handleCommo = (e) => {
+    if (commo.includes(e.target.value)) {
+      setCommo(commo.filter((p) => p !== e.target.value));
+    } else {
+      setCommo([...commo, e.target.value]);
+    }
+  };
+  return (
+    <Container>
+      <div className="dropdown">
+        <input
+          checked={checkkk}
+          onChange={(e) => setCheckkk(!checkkk)}
+          type="checkbox"
+        />
+        <button className="dropbtn">
+          {"Commodities"}
+          <FontAwesomeIcon className="gender" icon={faTv}></FontAwesomeIcon>
+        </button>
+        <div className="dropdown-content commodities">
+          <ul>
+            <li>
+              <input
+                type="radio"
+                value="tv"
+                checked={commo.includes("tv") ? true : false}
+                onClick={(e) => handleCommo(e)}
+              />{" "}
+              TV
+            </li>
+            <li>
+              <input
+                type="radio"
+                value="internet"
+                checked={commo.includes("internet") ? true : false}
+                onClick={(e) => handleCommo(e)}
+              />
+              Network connection
+            </li>
+            <li>
+              <input
+                type="radio"
+                value="ascenseur"
+                checked={commo.includes("ascenseur") ? true : false}
+                onClick={(e) => handleCommo(e)}
+              />
+              Ascenseur
+            </li>
+            <li>
+              <input
+                type="radio"
+                value="heater"
+                checked={commo.includes("heater") ? true : false}
+                onClick={(e) => handleCommo(e)}
+              />{" "}
+              Water Heater
+            </li>
+            <li>
+              <input
+                type="radio"
+                value="wach"
+                checked={commo.includes("wach") ? true : false}
+                onClick={(e) => handleCommo(e)}
+              />
+              Washing Machine
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="dropdown">
+        <input
+          checked={checkk}
+          onChange={(e) => setCheckk(!checkk)}
+          type="checkbox"
+        />
+        <button className="dropbtn">
+          {location.length > 0 ? location : "Location"}
+          <FontAwesomeIcon
+            className="gender"
+            icon={faSearchLocation}
+          ></FontAwesomeIcon>
+        </button>
+        <div className="dropdown-content location">
+          <ul>
+            <li
+              onClick={(e) => {
+                setLocation(e.target.innerHTML.toLowerCase());
+                setLocationd(e.target.innerHTML);
+                setCheckk(false);
+              }}
+            >
+              Tetouan
+            </li>
+            <li
+              onClick={(e) => {
+                setLocation(e.target.innerHTML.toLowerCase());
+                setLocationd(e.target.innerHTML);
+                setCheckk(false);
+              }}
+            >
+              Martil
+            </li>
+            <li
+              onClick={(e) => {
+                setLocation(e.target.innerHTML.toLowerCase());
+                setLocationd(e.target.innerHTML);
+                setCheckk(false);
+              }}
+            >
+              Mediq
+            </li>
+            <li
+              onClick={(e) => {
+                setLocation(e.target.innerHTML.toLowerCase());
+                setLocationd(e.target.innerHTML);
+                setCheckk(false);
+              }}
+            >
+              Fenideq
+            </li>
+          </ul>
+        </div>
+      </div>
 
-            <div className="dropdown">
-                <input checked={checkkk} onChange={(e)=>setCheckkk(!checkkk)}  type="checkbox" />
-                <button className="dropbtn">{location.length>0?location:'Commodities'}
-                    <FontAwesomeIcon className='gender' icon={faTv}></FontAwesomeIcon>
+      <DateRangePicker
+        autoUpdateInput={false}
+        startDate={startDate}
+        endDate={endDate}
+        locale={{ format: "DD/MM/YYYY" }}
+        onApply={(event, picker) => {
+          setDate({
+            start: picker.startDate,
+            end: picker.endDate,
+          });
+        }}
+        autoApply={true}
+      >
+        <input type="text" className="form-control" />
+      </DateRangePicker>
 
-                </button>
-                <div className="dropdown-content commodities">
-                    <ul>
-                        <li><input type="radio" /> TV</li>
-                        <li><input type="radio" />Network connection</li>
-                        <li><input type="radio" />Parking</li>
-                        <li><input type="radio" /> TV</li>
-                        <li><input type="radio" />Network connection</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="dropdown">
-                <input checked={checkk} onChange={(e)=>setCheckk(!checkk)}  type="checkbox" />
-                <button className="dropbtn">{location.length>0?location:'Location'}
-                    <FontAwesomeIcon className='gender' icon={faSearchLocation}></FontAwesomeIcon>
-
-                </button>
-                <div className="dropdown-content location">
-                    <ul>
-                        <li onClick={(e)=> {
-                            setLocation(e.target.innerHTML)
-                            ;
-                            setCheckk(false)
-                        }}>Tetouan</li>
-                        <li  onClick={(e)=> {
-                            setLocation(e.target.innerHTML);
-                            setCheckk(false)
-                        }}>Martil</li>
-                        <li  onClick={(e)=> {
-                            setLocation(e.target.innerHTML);
-                            setCheckk(false)
-                        }}>Mediq</li>
-                        <li  onClick={(e)=> {
-                            setLocation(e.target.innerHTML);
-                            setCheckk(false)
-                        }}>Fenideq</li>
-
-                    </ul>
-                </div>
-            </div>
-
-                <DateRangePicker   autoUpdateInput={false}
-                                                               startDate={startDate}
-                                                               endDate={endDate}
-                                                               locale={{ format: "DD/MM/YYYY" }}
-                                                               onApply={(event, picker) => {
-                                                                   setDate({ start :picker.startDate.format("DD/MM/YYYY"),
-                                                                       end: picker.endDate.format("DD/MM/YYYY")
-                                                                   })}}
-                                                               autoApply={true}  >
-                <input type="text" className="form-control" />
-            </DateRangePicker>
-
-
-
-
-                <div className='date'><FontAwesomeIcon className='dateicon' icon={faClock}></FontAwesomeIcon>
-                </div>
-               <div className='btn search'><Button /></div>
-
-        </Container>
-    );
+      <div className="date">
+        <FontAwesomeIcon className="dateicon" icon={faClock}></FontAwesomeIcon>
+      </div>
+      <div className="btn search">
+        <Button />
+      </div>
+    </Container>
+  );
 }
 
 export default SearchFilter;

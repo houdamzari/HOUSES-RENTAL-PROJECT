@@ -4,10 +4,15 @@ import { theme } from "../Utilities/theme";
 import BigContainer from "./BigContainer";
 
 const Container = styled.div``;
-function Home(props) {
+function Home({ setDate, setCommo, setLocation, commo }) {
   return (
     <Container>
-      <BigContainer />
+      <BigContainer
+        setDate={setDate}
+        setLocation={setLocation}
+        setCommo={setCommo}
+        commo={commo}
+      />
     </Container>
   );
 }

@@ -51,6 +51,7 @@ function Button({ handleSubmit }) {
         onClick={() => {
           setStatus(true);
           history.push("/register");
+          handleSubmit();
         }}
         className="btn register"
       >
@@ -61,7 +62,6 @@ function Button({ handleSubmit }) {
         onClick={() => {
           setStatus(false);
           history.push("/login");
-          handleSubmit();
         }}
         className="btn login"
       >

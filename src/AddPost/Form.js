@@ -4,6 +4,8 @@ import { theme } from "../Utilities/theme";
 import Button from "./Button";
 import ReactMapboxGl, { Layer, Source } from "react-mapbox-gl";
 import { MAPBOX_TOKEN } from "../Utilities/helpers";
+import axios from "axios";
+import moment from "moment";
 import Spacer from "../Utilities/Spacer";
 const Map = ReactMapboxGl({
   ...MAPBOX_TOKEN,
@@ -15,6 +17,11 @@ const Container = styled.div`
   gap: 15rem;
   position: relative;
   top: 1rem;
+  .tags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
   .dropdown-content {
     transition: all 0.4s;
     display: none;
@@ -56,7 +63,7 @@ const Container = styled.div`
     margin-bottom: 0.7rem;
     margin-top: 0.5rem;
   }
-  input[type="checkbox"] {
+  input[type="checkbox"]:not(.tagss) {
     opacity: 0;
     appearance: none;
     position: absolute;
@@ -108,7 +115,7 @@ const Container = styled.div`
     left: -1rem;
     padding-bottom: 0.7rem;
   }
-  .white{
+  .white {
     width: 21.5rem;
     height: 2.5rem;
     background-color: white;
@@ -120,16 +127,33 @@ function Form(props) {
   const [location, setLocation] = useState("");
   const [checkk, setCheckk] = useState(false);
   const [data, setData] = useState({});
-  const [pictures, setPictures] = useState([]);
+  const [picture1, setPicture1] = useState({});
+  const [picture2, setPicture2] = useState({});
+  const [picture3, setPicture3] = useState({});
   const [coordinates, setCoords] = useState(null);
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
   const [price, setPrice] = useState("");
-  const [dispo, setDispo] = useState(false);
+  const [dispo, setDispo] = useState([]);
   const [conditions, setConditions] = useState([0]);
   const [conditionsList, setConditionsList] = useState([]);
-
-  const handlePics = (e) => {
-    if (pictures) {
-      setPictures([...pictures, ...e.target.files]);
+  const [users, setUsers] = React.useState([]);
+  const [userData, setUserData] = React.useState([]);
+  React.useEffect(async () => {
+    await axios
+      .get("http://localhost:8080/students")
+      .then(({ data }) => setUsers(data));
+  }, []);
+  React.useEffect(() => {
+    const id = window.localStorage.getItem("userID");
+    console.log(id);
+    setUserData(users.filter((p) => p.studentId === id));
+  }, [users]);
+  const handleTags = (e) => {
+    if (dispo.includes(e.target.value)) {
+      setDispo(dispo.filter((p) => p.slug !== e.target.value));
+    } else {
+      setDispo([...dispo, { slug: e.target.value, name: e.target.value }]);
     }
   };
   const handleSubmit = () => {
@@ -141,38 +165,85 @@ function Form(props) {
     }
     setConditionsList(array);
     const data = {
-      pictures: pictures,
-      price: price,
-      coordinates: coordinates,
-      location: location,
-      dispo: dispo,
-      conditions: conditionsList.join(","),
+      description: desc,
+      title: title,
+      images: [picture1, picture2, picture3],
+      dateDePublication: moment(new Date()).format("DD/MM/YYYY"),
+      dureeDeDisponibilite: "5",
+      nombreDeCollegues: "1",
+      maxNombreDeCollegues: "2",
+      prix: price,
+      location: {
+        dateEntree: new Date(),
+        dureeDeLocation: "5",
+        longitude: coordinates.lng.toString(),
+        latitude: coordinates.lat.toString(),
+      },
+      region: location.toLowerCase(),
+      gender: userData[0].gender,
+      ville: location,
+      details: { conditions: conditionsList.join(","), tags: dispo },
     };
     setData(data);
-    console.log(data);
+    axios
+      .post(`http://localhost:8080/posts/${userData[0].studentId}`, data, {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
+      .then((res) => alert("Post Added"))
+      .catch((err) => console.error(err));
   };
+  console.log(data);
   return (
     <Container>
       <div className="firstflex">
         <h5 className="formlabel">Title :</h5>
         <div>
           <input
-              type="text"
-              className="formcontrol"
-              id="inputPassword"
+            type="text"
+            onChange={(e) => setTitle(e.target.value)}
+            className="formcontrol"
+            id="inputPassword"
           />
         </div>
-        <h5 className="formlabel">House pictures :</h5>
+        <h5 className="formlabel">Description :</h5>
+        <div>
+          <textarea
+            type="text"
+            className="formcontrol"
+            id="inputPassword"
+            onChange={(e) => setDesc(e.target.value)}
+          ></textarea>
+        </div>
+        <h5 className="formlabel">3 House pictures links please :</h5>
         <div>
           <input
-            multiple
-            type="file"
-            onChange={(e) => handlePics(e)}
+            type="text"
+            onChange={(e) =>
+              setPicture1({ description: "img1", url: e.target.value })
+            }
             className="formcontrol"
-            id="Picture"
+            id="inputPassword"
+          />
+          <input
+            type="text"
+            onChange={(e) =>
+              setPicture2({ description: "img2", url: e.target.value })
+            }
+            className="formcontrol"
+            id="inputPassword"
+          />
+          <input
+            type="text"
+            onChange={(e) =>
+              setPicture3({ description: "img3", url: e.target.value })
+            }
+            className="formcontrol"
+            id="inputPassword"
           />
         </div>
-
 
         <h5 className="formlabel">Adresse coordinates :</h5>
         <Spacer margin="2rem" />
@@ -218,18 +289,17 @@ function Form(props) {
               </>
             )}
             <div className="white"></div>
-
           </Map>
         </div>
       </div>
       <div className="secondflex">
-        <Spacer margin='2rem'/>
+        <Spacer margin="2rem" />
 
         <div className="dropdown">
           <input
-              checked={checkk}
-              onChange={(e) => setCheckk(!checkk)}
-              type="checkbox"
+            checked={checkk}
+            onChange={(e) => setCheckk(!checkk)}
+            type="checkbox"
           />
           <button className="dropbtn">
             {location.length > 0 ? location : "City"}
@@ -237,34 +307,34 @@ function Form(props) {
           <div className="dropdown-content location">
             <ul>
               <li
-                  onClick={(e) => {
-                    setLocation(e.target.innerHTML);
-                    setCheckk(false);
-                  }}
+                onClick={(e) => {
+                  setLocation(e.target.innerHTML);
+                  setCheckk(false);
+                }}
               >
                 Tetouan
               </li>
               <li
-                  onClick={(e) => {
-                    setLocation(e.target.innerHTML);
-                    setCheckk(false);
-                  }}
+                onClick={(e) => {
+                  setLocation(e.target.innerHTML);
+                  setCheckk(false);
+                }}
               >
                 Martil
               </li>
               <li
-                  onClick={(e) => {
-                    setLocation(e.target.innerHTML);
-                    setCheckk(false);
-                  }}
+                onClick={(e) => {
+                  setLocation(e.target.innerHTML);
+                  setCheckk(false);
+                }}
               >
                 Mediq
               </li>
               <li
-                  onClick={(e) => {
-                    setLocation(e.target.innerHTML);
-                    setCheckk(false);
-                  }}
+                onClick={(e) => {
+                  setLocation(e.target.innerHTML);
+                  setCheckk(false);
+                }}
               >
                 Fenideq
               </li>
@@ -297,16 +367,71 @@ function Form(props) {
           </div>
         ))}
 
-        <h5 className="formlabel">Disponibilité :</h5>
-        <div>
-          <input
-            type="text"
-            onChange={(e) => setDispo(e.target.value)}
-            className="formcontrol"
-            id="inputPassword"
-          />
+        <h5 className="formlabel">Tags :</h5>
+        <div className="tags">
+          <div>
+            <input
+              className="tagss"
+              type="checkbox"
+              onChange={(e) => handleTags(e)}
+              value="tv"
+              id="inputPassword"
+            />
+            <label>TV</label>
+          </div>
+          <div>
+            <input
+              className="tagss"
+              type="checkbox"
+              value="ascenseur"
+              onChange={(e) => handleTags(e)}
+              id="inputPassword"
+            />
+            <label>Elevator</label>
+          </div>
+          <div>
+            <input
+              className="tagss"
+              value="internet"
+              type="checkbox"
+              onChange={(e) => handleTags(e)}
+              id="inputPassword"
+            />
+            <label>Internet</label>
+          </div>
+
+          <div>
+            <input
+              className="tagss"
+              type="checkbox"
+              value="heater"
+              onChange={(e) => handleTags(e)}
+              id="inputPassword"
+            />
+            <label>Water Heater</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              className="tagss"
+              value="wach"
+              onChange={(e) => handleTags(e)}
+              id="inputPassword"
+            />
+            <label>Washing Machine</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              className="tagss"
+              value="refri"
+              onChange={(e) => handleTags(e)}
+              id="inputPassword"
+            />
+            <label>Refrigerator</label>
+          </div>
         </div>
-        <Button  handleSubmit={() => handleSubmit()} />
+        <Button handleSubmit={() => handleSubmit()} />
       </div>
     </Container>
   );

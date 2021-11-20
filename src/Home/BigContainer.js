@@ -11,10 +11,15 @@ const Container = styled.div`
   gap: 5rem;
   width: 100vw;
 `;
-function BigContainer({ userPos }) {
+function BigContainer({ setDate, setCommo, setLocation, commo }) {
   return (
     <Container>
-      <LeftSection />
+      <LeftSection
+        setDate={setDate}
+        setLocation={setLocation}
+        setCommo={setCommo}
+        commo={commo}
+      />
       <RightSection />
     </Container>
   );

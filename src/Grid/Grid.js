@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import axios from "axios";
+import moment from "moment";
 const Container = styled.div`
   .parent {
     display: grid;
@@ -14,19 +15,56 @@ const Container = styled.div`
     margin-bottom: 50px;
   }
 `;
-function Grid(props) {
+function Grid({ commo, location, date }) {
   const [data, setData] = React.useState([]);
+  const [filtered, setFiltered] = React.useState([]);
+  const [datelist, setDateList] = React.useState([]);
   React.useEffect(async () => {
     await axios
       .get("http://localhost:8080/posts")
       .then(({ data }) => setData(data));
   }, []);
+  React.useEffect(() => {
+    if (date) {
+      let dates = [];
+      const theDate = new Date(date.start);
+      while (theDate < date.end) {
+        dates = [...dates, moment(theDate).format("DD/MM/YYYY")];
+        theDate.setDate(theDate.getDate() + 1);
+      }
+
+      setDateList(dates);
+    }
+  }, [date]);
+
+  React.useEffect(() => {
+    if (data) {
+      let output = data;
+      if (commo) {
+        output = data.filter(
+          (p) =>
+            commo.indexOf(p.details.tags[0]?.slug) > -1 ||
+            commo.indexOf(p.details.tags[1]?.slug) > -1 ||
+            commo.indexOf(p.details.tags[2]?.slug) > -1
+        );
+      }
+      if (location) {
+        output = data.filter((p) => p.region === location);
+      }
+      if (datelist.length !== 0) {
+        console.log(datelist);
+        output = data.filter((p) => datelist.indexOf(p.dateDePublication) > -1);
+      }
+
+      setFiltered(output);
+    }
+    console.log(filtered);
+  }, [commo, location, date, datelist]);
   return (
     <Container>
       <div className="parent">
-        {data.map((p) => (
-          <Card data={p} />
-        ))}
+        {filtered.length !== 0 && filtered.map((p) => <Card data={p} />)}
+        {filtered.length === 0 && data.map((p) => <Card data={p} />)}
       </div>
     </Container>
   );

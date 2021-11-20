@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../Utilities/theme";
 import logo from "./media/LOGO.png";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Button from "../Login/Button";
 import axios from "axios";
 
@@ -30,6 +30,7 @@ function LoginForm(props) {
   const [password, setPassword] = React.useState("");
   const [users, setUsers] = React.useState([]);
   let history = useHistory();
+  console.log(users);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(async () => {
     await axios
@@ -51,7 +52,9 @@ function LoginForm(props) {
   };
   return (
     <Container>
-        <Link to='/'><img src={logo} alt=""/></Link>
+      <Link to="/">
+        <img src={logo} alt="" />
+      </Link>
       <h4 className="formlabel">Email :</h4>
       <div>
         <input
