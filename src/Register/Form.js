@@ -3,15 +3,16 @@ import styled from "styled-components";
 import {theme} from "../Utilities/theme";
 import sidepic from "../Home/media/sideloginpic.jpg";
 import RegisterForm from "./RegisterForm";
+import Spacer from "../Utilities/Spacer";
 
 const Container = styled.div`
   background-color: #ffff;
   width: 95vw;
-  height: 90vh;
+  height: 92vh;
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-51%);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

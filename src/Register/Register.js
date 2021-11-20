@@ -9,7 +9,7 @@ const Container = styled.div`
     background-color: ${theme.yellow};
     width: 100vw;
   height: 100vh;
-    
+    overflow: hidden;
 `
 function Register(props) {
     return (

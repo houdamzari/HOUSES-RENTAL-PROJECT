@@ -2,7 +2,9 @@ import React from 'react';
 import styled from "styled-components";
 import {theme} from "../Utilities/theme";
 import logo from "../Home/media/LOGO.png";
-import Button from "../Login/Button";
+import Button from "./Button";
+import {Link} from "react-router-dom";
+import Spacer from "../Utilities/Spacer";
 
 const Container = styled.div`
 
@@ -30,23 +32,36 @@ const Container = styled.div`
       }
       .btn{
         position: relative;
-        top: -2rem;
+        top: -1.8rem;
       }
 `
 function RegisterForm(props) {
     return (
         <Container>
-            <img src={logo} alt="logo"/>
+            <Link to='/'><img src={logo} alt=""/></Link>
+            <Spacer margin='1rem'/>
+            <h4 className="formlabel">First Name :</h4>
+            <div>
+                <input type="text" className="formcontrol" id="inputPassword"/>
+            </div>
+            <h4 className="formlabel">Last Name :</h4>
+            <div>
+                <input type="text" className="formcontrol" id="inputPassword"/>
+            </div>
+            <h4 className="formlabel">Image :</h4>
+            <div>
+                <input type="file" className="formcontrol" id="inputPassword"/>
+            </div>
             <h4 className="formlabel">Email :</h4>
             <div>
                 <input type="email" className="formcontrol" id="inputPassword"/>
             </div>
-            <h4 className="formlabel">Password :</h4>
+            <h4 className="formlabel">Gender :</h4>
             <div>
-                <input type="password" className="formcontrol" id="inputPassword"/>
+                <input type="text" className="formcontrol" id="inputPassword"/>
             </div>
 
-            <h4 className="formlabel">Confirm Password :</h4>
+            <h4 className="formlabel"> Password :</h4>
             <div>
                 <input type="password" className="formcontrol" id="inputPassword"/>
             </div>

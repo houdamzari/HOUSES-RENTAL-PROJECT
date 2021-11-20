@@ -108,7 +108,8 @@ function Navbar(props) {
           </li>
           <li>
             <Link to="/">
-              <img className="logo" src={logo} alt="logo" />
+              <Link to='/'><img className="logo" src={logo} alt=""/></Link>
+
             </Link>
           </li>
 

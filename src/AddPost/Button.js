@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../Utilities/theme";
 import { useHistory, useLocation } from "react-router-dom";
+import Spacer from "../Utilities/Spacer";
 
 const Container = styled.div`
   position: relative;
   top: 2rem;
   left: 13.3rem;
-
   .btn {
+
     display: block;
     width: 10rem;
     height: 3rem;
@@ -20,6 +21,8 @@ const Container = styled.div`
     text-transform: uppercase;
     font-size: 1rem;
     background-color: ${theme.turquois};
+    margin-bottom: 2rem;
+
     &:hover {
       background-color: ${theme.green};
       color: ${theme.turquois};
@@ -29,7 +32,7 @@ const Container = styled.div`
 function Button({ handleSubmit }) {
   return (
     <Container>
-      <button onClick={() => handleSubmit()} className="btn">
+      <button  onClick={() => handleSubmit()} className="btn">
         {" "}
         Add Post
       </button>

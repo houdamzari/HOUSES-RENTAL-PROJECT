@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import styled from "styled-components";
 import {theme} from "../Utilities/theme";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faVenusMars} from "@fortawesome/free-solid-svg-icons";
+import {faTv} from "@fortawesome/free-solid-svg-icons";
+
 import {faSearchLocation} from "@fortawesome/free-solid-svg-icons";
 import 'bootstrap/dist/css/bootstrap.css';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
@@ -74,6 +75,10 @@ const Container = styled.div`
       ~.location {
         top: -12rem;
       }
+        ~.commodities{
+          top: -14rem;
+
+        }
       ~.geender{
         top: -7rem;
 
@@ -108,8 +113,11 @@ const Container = styled.div`
 
     .gender {
       position: relative;
-      left: 3rem;
       font-size: 1.7rem;
+      left: 1.5rem;
+      top: .2rem;
+      color: ${theme.turquois};
+
     }
   }
   .dateicon{
@@ -140,6 +148,7 @@ function SearchFilter(props) {
     const [gender,setGender] = useState('')
     const [location,setLocation] = useState('')
     const [check,setCheck] = useState(false)
+    const [checkkk,setCheckkk] = useState(false)
     const [checkk,setCheckk] = useState(false)
     const [date,setDate] = useState(null)
     const startDate = new Date();
@@ -147,29 +156,23 @@ function SearchFilter(props) {
     const endDate = new Date();
     return (
         <Container>
-            {/*<div className="dropdown">*/}
-            {/*    <input checked={check} onChange={(e)=>setCheck(!check)} type="checkbox" />*/}
-            {/*    <button className="dropbtn">{gender.length>0?gender:'Gender'}*/}
-            {/*    <FontAwesomeIcon className='gender' icon={faVenusMars}></FontAwesomeIcon>*/}
-            {/*    </button>*/}
-            {/*    <div className="dropdown-content geender">*/}
-            {/*        <ul>*/}
-            {/*        <li onClick={(e)=> {*/}
-            {/*            setGender(e.target.innerHTML);*/}
-            {/*            setCheck(false)*/}
-            {/*        }}>Male</li>*/}
-            {/*        <li  onClick={(e)=> {*/}
-            {/*            setGender(e.target.innerHTML);*/}
-            {/*                setCheck(false)*/}
-            {/*        }}>Female</li>*/}
-            {/*        </ul>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            <select >
-                  <ul>
-                      <li><input type="radio" value="Male" name="gender" /> Male
-            </li></ul>
-            </select>
+
+            <div className="dropdown">
+                <input checked={checkkk} onChange={(e)=>setCheckkk(!checkkk)}  type="checkbox" />
+                <button className="dropbtn">{location.length>0?location:'Commodities'}
+                    <FontAwesomeIcon className='gender' icon={faTv}></FontAwesomeIcon>
+
+                </button>
+                <div className="dropdown-content commodities">
+                    <ul>
+                        <li><input type="radio" /> TV</li>
+                        <li><input type="radio" />Network connection</li>
+                        <li><input type="radio" />Parking</li>
+                        <li><input type="radio" /> TV</li>
+                        <li><input type="radio" />Network connection</li>
+                    </ul>
+                </div>
+            </div>
             <div className="dropdown">
                 <input checked={checkk} onChange={(e)=>setCheckk(!checkk)}  type="checkbox" />
                 <button className="dropbtn">{location.length>0?location:'Location'}

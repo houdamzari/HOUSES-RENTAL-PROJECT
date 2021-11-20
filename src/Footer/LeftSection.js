@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {theme} from "../Utilities/theme";
 import logo from "./media/logo.svg";
 import news from "./media/sendmail.svg";
+import {Link} from "react-router-dom";
 
 
 const Container = styled.div`
@@ -46,7 +47,7 @@ const Container = styled.div`
 function LeftSection(props) {
     return (
         <Container>
-            <img src={logo} alt=""/>
+            <Link to='/'><img src={logo} alt=""/></Link>
             <div className="newssection">
                 <input className='newsletter' placeholder='Email Address' type='email'/>
                 <img className='newsicon' src={news} alt=""/>
