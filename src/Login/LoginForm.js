@@ -11,8 +11,8 @@ const Container = styled.div`
   left: 8rem;
   .formcontrol {
     width: 22.7rem;
-    height: 2.2rem;
-    margin-top: 1rem;
+    height: 3rem;
+    margin: 2rem 0;
     border-radius: 0.5rem;
     background-color: rgba(2, 102, 112, 0.1);
   }
@@ -51,7 +51,7 @@ function LoginForm(props) {
   };
   return (
     <Container>
-      <img src={logo} alt="logo" />
+        <Link to='/'><img src={logo} alt=""/></Link>
       <h4 className="formlabel">Email :</h4>
       <div>
         <input

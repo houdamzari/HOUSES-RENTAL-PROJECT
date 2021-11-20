@@ -3,6 +3,8 @@ import styled from "styled-components";
 import {theme} from "../Utilities/theme";
 import Form from "./Form";
 import logo from './media/logo.svg';
+import Spacer from "../Utilities/Spacer";
+import {Link} from "react-router-dom";
 
 
 const Container = styled.div`
@@ -17,8 +19,11 @@ const Container = styled.div`
 function BigContainer(props) {
     return (
         <Container>
-            <img src={logo} alt=""/>
+            <Link to='/'><img src={logo} alt=""/></Link>
+            <Spacer margin='3rem'/>
             <Form/>
+            <Spacer margin='4rem'/>
+
         </Container>
     );
 }

@@ -11,6 +11,7 @@ import Footer from "./Footer/Footer";
 import AddPost from "./AddPost/Post";
 import PostPage from "./PostPage/PostPage";
 import Profile from "./Profile/Profile";
+import Historique from "./Historique/Historique";
 
 export default function App() {
   return (
@@ -43,6 +44,10 @@ export default function App() {
         <Route path="/Profile">
           <Navbar />
           <Profile />
+        </Route>
+        <Route path="/Historique">
+          <Navbar />
+          <Historique />
         </Route>
       </Switch>
     </Router>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {theme} from "../Utilities/theme";
-import {useHistory,useLocation} from "react-router-dom";
+import {Link, useHistory, useLocation} from "react-router-dom";
 
 
 const Container = styled.div`
@@ -31,8 +31,9 @@ const Container = styled.div`
 function Button(props) {
     return (
         <Container>
-            <button className='btn'> Historique</button>
-        </Container>
+            <Link to='/Historique'><button className='btn'> Historique</button>
+            </Link>
+            </Container>
     );
 }
 

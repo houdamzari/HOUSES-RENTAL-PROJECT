@@ -47,7 +47,7 @@ const Container = styled.div`
   .dropbtn {
     left: 0.5rem;
     width: 23rem;
-    height: 3rem;
+    height: 2.5rem;
     background-color: transparent;
     border-radius: 10px;
     border: 2px solid ${theme.turquois};
@@ -108,6 +108,13 @@ const Container = styled.div`
     left: -1rem;
     padding-bottom: 0.7rem;
   }
+  .white{
+    width: 21.5rem;
+    height: 2.5rem;
+    background-color: white;
+    position: relative;
+    top: -2.3rem;
+  }
 `;
 function Form(props) {
   const [location, setLocation] = useState("");
@@ -147,7 +154,15 @@ function Form(props) {
   return (
     <Container>
       <div className="firstflex">
-        <h5 className="formlabel">Picture 1 :</h5>
+        <h5 className="formlabel">Title :</h5>
+        <div>
+          <input
+              type="text"
+              className="formcontrol"
+              id="inputPassword"
+          />
+        </div>
+        <h5 className="formlabel">House pictures :</h5>
         <div>
           <input
             multiple
@@ -158,54 +173,7 @@ function Form(props) {
           />
         </div>
 
-        <h5 className="formlabel">Region :</h5>
 
-        <div className="dropdown">
-          <input
-            checked={checkk}
-            onChange={(e) => setCheckk(!checkk)}
-            type="checkbox"
-          />
-          <button className="dropbtn">
-            {location.length > 0 ? location : "Location"}
-          </button>
-          <div className="dropdown-content location">
-            <ul>
-              <li
-                onClick={(e) => {
-                  setLocation(e.target.innerHTML);
-                  setCheckk(false);
-                }}
-              >
-                Tetouan
-              </li>
-              <li
-                onClick={(e) => {
-                  setLocation(e.target.innerHTML);
-                  setCheckk(false);
-                }}
-              >
-                Martil
-              </li>
-              <li
-                onClick={(e) => {
-                  setLocation(e.target.innerHTML);
-                  setCheckk(false);
-                }}
-              >
-                Mediq
-              </li>
-              <li
-                onClick={(e) => {
-                  setLocation(e.target.innerHTML);
-                  setCheckk(false);
-                }}
-              >
-                Fenideq
-              </li>
-            </ul>
-          </div>
-        </div>
         <h5 className="formlabel">Adresse coordinates :</h5>
         <Spacer margin="2rem" />
         <div className="flex">
@@ -249,11 +217,60 @@ function Form(props) {
                 />
               </>
             )}
+            <div className="white"></div>
+
           </Map>
         </div>
       </div>
-
       <div className="secondflex">
+        <Spacer margin='2rem'/>
+
+        <div className="dropdown">
+          <input
+              checked={checkk}
+              onChange={(e) => setCheckk(!checkk)}
+              type="checkbox"
+          />
+          <button className="dropbtn">
+            {location.length > 0 ? location : "City"}
+          </button>
+          <div className="dropdown-content location">
+            <ul>
+              <li
+                  onClick={(e) => {
+                    setLocation(e.target.innerHTML);
+                    setCheckk(false);
+                  }}
+              >
+                Tetouan
+              </li>
+              <li
+                  onClick={(e) => {
+                    setLocation(e.target.innerHTML);
+                    setCheckk(false);
+                  }}
+              >
+                Martil
+              </li>
+              <li
+                  onClick={(e) => {
+                    setLocation(e.target.innerHTML);
+                    setCheckk(false);
+                  }}
+              >
+                Mediq
+              </li>
+              <li
+                  onClick={(e) => {
+                    setLocation(e.target.innerHTML);
+                    setCheckk(false);
+                  }}
+              >
+                Fenideq
+              </li>
+            </ul>
+          </div>
+        </div>
         <h5 className="formlabel">Price :</h5>
         <div>
           <input
@@ -289,7 +306,7 @@ function Form(props) {
             id="inputPassword"
           />
         </div>
-        <Button handleSubmit={() => handleSubmit()} />
+        <Button  handleSubmit={() => handleSubmit()} />
       </div>
     </Container>
   );
