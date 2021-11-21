@@ -70,6 +70,7 @@ function Grid({ commo, location, date }) {
         output = data.filter((p) => p.gender === userData[0].gender);
       }
       setFiltered(output);
+      console.log(output)
     }
   }, [commo, location, date, datelist, userData]);
   return (

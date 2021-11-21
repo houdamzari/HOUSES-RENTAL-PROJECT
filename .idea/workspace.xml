@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="679f15cf-d773-41b6-a7e9-ed144cc01976" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/src/Historique/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Historique/Historique.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Historique/media/City.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Historique/media/up.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Register/Button.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddPost/BigContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddPost/BigContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddPost/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddPost/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddPost/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddPost/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddPost/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddPost/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Footer/LeftSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Footer/LeftSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home/SearchFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/SearchFilter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Register/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Register/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Register/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Register/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Register/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +95,10 @@
       <workItem from="1637180562999" duration="1185000" />
       <workItem from="1637252862540" duration="1794000" />
       <workItem from="1637338366450" duration="10766000" />
-      <workItem from="1637363220747" duration="8161000" />
+      <workItem from="1637363220747" duration="9206000" />
+      <workItem from="1637424148498" duration="596000" />
+      <workItem from="1637460269571" duration="92000" />
+      <workItem from="1637462907524" duration="1129000" />
     </task>
     <task id="LOCAL-00001" summary="'login-register-home1-done'">
       <created>1635808161355</created>
@@ -149,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637342335974</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=".">
+      <created>1637372646987</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637372646987</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
