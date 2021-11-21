@@ -21,7 +21,7 @@ function NearbySection(props) {
   const [userData, setUserData] = React.useState([]);
   React.useEffect(async () => {
     await axios
-      .get("http://localhost:8080/students")
+      .get("http://localhost:8080/students?limit=10")
       .then(({ data }) => setUsers(data));
   }, []);
   React.useEffect(() => {
@@ -31,7 +31,7 @@ function NearbySection(props) {
   }, [users]);
   React.useEffect(async () => {
     await axios
-      .get("http://localhost:8080/posts")
+      .get("http://localhost:8080/posts?limit=10")
       .then(({ data }) => setData(data));
   }, []);
 

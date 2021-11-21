@@ -141,7 +141,7 @@ function Form(props) {
   const [userData, setUserData] = React.useState([]);
   React.useEffect(async () => {
     await axios
-      .get("http://localhost:8080/students")
+      .get("http://localhost:8080/students?limit=10")
       .then(({ data }) => setUsers(data));
   }, []);
   React.useEffect(() => {
@@ -172,6 +172,7 @@ function Form(props) {
       dureeDeDisponibilite: "5",
       nombreDeCollegues: "1",
       maxNombreDeCollegues: "2",
+      status: "active",
       prix: price,
       location: {
         dateEntree: new Date(),

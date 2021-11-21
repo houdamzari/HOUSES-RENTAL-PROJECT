@@ -18,7 +18,7 @@ function BigContainer(props) {
   const [userData, setUserData] = React.useState([]);
   React.useEffect(async () => {
     await axios
-      .get("http://localhost:8080/students")
+      .get("http://localhost:8080/students?limit=10")
       .then(({ data }) => setUsers(data));
   }, []);
   React.useEffect(() => {

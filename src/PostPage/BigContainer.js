@@ -27,7 +27,7 @@ function BigContainer(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(async () => {
     await axios
-      .get("http://localhost:8080/posts")
+      .get("http://localhost:8080/posts?limit=10")
       .then(({ data }) => setData(data));
   }, []);
   React.useEffect(() => {

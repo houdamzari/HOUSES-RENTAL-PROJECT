@@ -34,7 +34,7 @@ function LoginForm(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(async () => {
     await axios
-      .get("http://localhost:8080/students")
+      .get("http://localhost:8080/students?limit=10")
       .then(({ data }) => setUsers(data));
   }, []);
 

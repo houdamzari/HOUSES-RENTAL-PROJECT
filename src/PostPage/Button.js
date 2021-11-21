@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../Utilities/theme";
-
+import axios from "axios";
 const Container = styled.div`
   position: relative;
   left: 20rem;
@@ -26,6 +26,19 @@ const Container = styled.div`
   }
 `;
 function Button({ post, getSafe }) {
+  const data = { ...post, status: "request" };
+  console.log(data);
+  const handleClick = async () => {
+    await axios
+      .put(`http://localhost:8080/posts/${post.postId}`, {
+        ...post,
+        status: "request",
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+    alert("request sent");
+  };
+  console.log(post);
   return (
     <Container>
       <a href={"mailto:" + getSafe(() => post.student.email)} className="btn">

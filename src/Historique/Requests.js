@@ -11,6 +11,7 @@ function Historique(props) {
   const [users, setUsers] = React.useState([]);
   const [userData, setUserData] = React.useState([]);
   const [histo, setHisto] = React.useState([]);
+  const [filter, setFilter] = React.useState([]);
   React.useEffect(async () => {
     await axios
       .get("http://localhost:8080/students?limit=10")
@@ -18,22 +19,26 @@ function Historique(props) {
   }, []);
   React.useEffect(() => {
     const id = window.localStorage.getItem("userID");
-    console.log(id);
     setUserData(users.filter((p) => p.studentId === id));
   }, [users]);
   React.useEffect(async () => {
     await axios
-      .get(
-        `http://localhost:8080/historique/${window.localStorage.getItem(
-          "userID"
-        )}`
-      )
+      .get(`http://localhost:8080/posts?limit=10`)
       .then(({ data }) => setHisto(data));
   }, [userData]);
-  console.log(histo);
+  React.useEffect(() => {
+    if (histo) {
+      const output = histo.filter(
+        (p) =>
+          p.status === "request" &&
+          p.student.studentId === window.localStorage.getItem("userID")
+      );
+      setFilter(output);
+    }
+  }, [histo]);
   return (
     <Container>
-      {histo.map((item) => (
+      {filter.map((item) => (
         <Card data={item} user={userData[0]} />
       ))}
     </Container>

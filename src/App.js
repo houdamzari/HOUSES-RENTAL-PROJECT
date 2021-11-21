@@ -12,6 +12,7 @@ import AddPost from "./AddPost/Post";
 import PostPage from "./PostPage/PostPage";
 import Profile from "./Profile/Profile";
 import Historique from "./Historique/Historique";
+import Requests from "./Historique/Requests";
 
 export default function App() {
   const [commo, setCommo] = React.useState([]);
@@ -57,6 +58,10 @@ export default function App() {
         <Route path="/Historique">
           <Navbar />
           <Historique />
+        </Route>
+        <Route path="/Requests">
+          <Navbar />
+          <Requests />
         </Route>
       </Switch>
     </Router>
