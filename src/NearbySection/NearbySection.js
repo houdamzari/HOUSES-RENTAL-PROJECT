@@ -17,6 +17,18 @@ function NearbySection(props) {
   const [nearest, setNearest] = React.useState([]);
   const [data, setData] = React.useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
+  const [users, setUsers] = React.useState([]);
+  const [userData, setUserData] = React.useState([]);
+  React.useEffect(async () => {
+    await axios
+      .get("http://localhost:8080/students")
+      .then(({ data }) => setUsers(data));
+  }, []);
+  React.useEffect(() => {
+    const id = window.localStorage.getItem("userID");
+    console.log(id);
+    setUserData(users.filter((p) => p.studentId === id));
+  }, [users]);
   React.useEffect(async () => {
     await axios
       .get("http://localhost:8080/posts")
@@ -39,6 +51,9 @@ function NearbySection(props) {
   React.useEffect(() => {
     if (data) {
       let output = getSafe(() => data);
+      if (userData?.[0]) {
+        output = data.filter((p) => p.gender === userData[0].gender);
+      }
       if (userPos) {
         try {
           output = output
@@ -88,10 +103,11 @@ function NearbySection(props) {
         } catch (error) {
           console.error("invalid coordinates");
         }
+
         setNearest(output);
       }
     }
-  }, [userPos, data]);
+  }, [userPos, data, userData]);
 
   return (
     <Container>

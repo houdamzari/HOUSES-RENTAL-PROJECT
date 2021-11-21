@@ -16,6 +16,18 @@ const Container = styled.div`
   }
 `;
 function Grid({ commo, location, date }) {
+  const [users, setUsers] = React.useState([]);
+  const [userData, setUserData] = React.useState([]);
+  React.useEffect(async () => {
+    await axios
+      .get("http://localhost:8080/students")
+      .then(({ data }) => setUsers(data));
+  }, []);
+  React.useEffect(() => {
+    const id = window.localStorage.getItem("userID");
+    console.log(id);
+    setUserData(users.filter((p) => p.studentId === id));
+  }, [users]);
   const [data, setData] = React.useState([]);
   const [filtered, setFiltered] = React.useState([]);
   const [datelist, setDateList] = React.useState([]);
@@ -52,14 +64,14 @@ function Grid({ commo, location, date }) {
         output = data.filter((p) => p.region === location);
       }
       if (datelist.length !== 0) {
-        console.log(datelist);
         output = data.filter((p) => datelist.indexOf(p.dateDePublication) > -1);
       }
-
+      if (userData?.[0]) {
+        output = data.filter((p) => p.gender === userData[0].gender);
+      }
       setFiltered(output);
     }
-    console.log(filtered);
-  }, [commo, location, date, datelist]);
+  }, [commo, location, date, datelist, userData]);
   return (
     <Container>
       <div className="parent">
